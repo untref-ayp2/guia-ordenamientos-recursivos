@@ -1,0 +1,200 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: TestEncontrarEnesimoMayor
+      id: testencontrarenesimomayor
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestEncontrarEnesimoMayor
+        setup-command: ''
+        command: go test ./... -run ^TestEncontrarEnesimoMayor$
+        timeout: 10
+        max-score: 1
+    - name: TestRecursiveHeapSortArrayVacio
+      id: testrecursiveheapsortarrayvacio
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestRecursiveHeapSortArrayVacio
+        setup-command: ''
+        command: go test ./... -run ^TestRecursiveHeapSortArrayVacio$
+        timeout: 10
+        max-score: 1
+    - name: TestRecursiveHeapSortArrayConUnSoloElemento
+      id: testrecursiveheapsortarrayconunsoloelemento
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestRecursiveHeapSortArrayConUnSoloElemento
+        setup-command: ''
+        command: go test ./... -run ^TestRecursiveHeapSortArrayConUnSoloElemento$
+        timeout: 10
+        max-score: 1
+    - name: TestRecursiveHeapSortDosElementosIguales
+      id: testrecursiveheapsortdoselementosiguales
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestRecursiveHeapSortDosElementosIguales
+        setup-command: ''
+        command: go test ./... -run ^TestRecursiveHeapSortDosElementosIguales$
+        timeout: 10
+        max-score: 1
+    - name: TestRecursiveHeapSortArrayMenorAMayor
+      id: testrecursiveheapsortarraymenoramayor
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestRecursiveHeapSortArrayMenorAMayor
+        setup-command: ''
+        command: go test ./... -run ^TestRecursiveHeapSortArrayMenorAMayor$
+        timeout: 10
+        max-score: 1
+    - name: TestRecursiveHeapSortArrayMayorAMenor
+      id: testrecursiveheapsortarraymayoramenor
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestRecursiveHeapSortArrayMayorAMenor
+        setup-command: ''
+        command: go test ./... -run ^TestRecursiveHeapSortArrayMayorAMenor$
+        timeout: 10
+        max-score: 1
+    - name: TestThreeWayMergeSort
+      id: testthreewaymergesort
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestThreeWayMergeSort
+        setup-command: ''
+        command: go test ./... -run ^TestThreeWayMergeSort$
+        timeout: 10
+        max-score: 1
+    - name: TestThreeWayMergeSortArrayVacio
+      id: testthreewaymergesortarrayvacio
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestThreeWayMergeSortArrayVacio
+        setup-command: ''
+        command: go test ./... -run ^TestThreeWayMergeSortArrayVacio$
+        timeout: 10
+        max-score: 1
+    - name: TestThreeWayMergeSortArrayUnElemento
+      id: testthreewaymergesortarrayunelemento
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestThreeWayMergeSortArrayUnElemento
+        setup-command: ''
+        command: go test ./... -run ^TestThreeWayMergeSortArrayUnElemento$
+        timeout: 10
+        max-score: 1
+    - name: TestThreeWayMergeSortCantidadPar
+      id: testthreewaymergesortcantidadpar
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestThreeWayMergeSortCantidadPar
+        setup-command: ''
+        command: go test ./... -run ^TestThreeWayMergeSortCantidadPar$
+        timeout: 10
+        max-score: 1
+    - name: TestThreeWayMergeSortCantidadImpar
+      id: testthreewaymergesortcantidadimpar
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestThreeWayMergeSortCantidadImpar
+        setup-command: ''
+        command: go test ./... -run ^TestThreeWayMergeSortCantidadImpar$
+        timeout: 10
+        max-score: 1
+    - name: TestQuickSortPivoteAleatorioArrayVacioQ
+      id: testquicksortpivotealeatorioarrayvacioq
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestQuickSortPivoteAleatorioArrayVacioQ
+        setup-command: ''
+        command: go test ./... -run ^TestQuickSortPivoteAleatorioArrayVacioQ$
+        timeout: 10
+        max-score: 1
+    - name: TestQuickSortPivoteAleatorioArrayUnElementoQ
+      id: testquicksortpivotealeatorioarrayunelementoq
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestQuickSortPivoteAleatorioArrayUnElementoQ
+        setup-command: ''
+        command: go test ./... -run ^TestQuickSortPivoteAleatorioArrayUnElementoQ$
+        timeout: 10
+        max-score: 1
+    - name: TestQuickSortPivoteAleatorioCantidadParQ
+      id: testquicksortpivotealeatoriocantidadparq
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestQuickSortPivoteAleatorioCantidadParQ
+        setup-command: ''
+        command: go test ./... -run ^TestQuickSortPivoteAleatorioCantidadParQ$
+        timeout: 10
+        max-score: 1
+    - name: TestQuickSortPivoteAleatorioCantidadImparQ
+      id: testquicksortpivotealeatoriocantidadimparq
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestQuickSortPivoteAleatorioCantidadImparQ
+        setup-command: ''
+        command: go test ./... -run ^TestQuickSortPivoteAleatorioCantidadImparQ$
+        timeout: 10
+        max-score: 1
+    - name: TestEncontrarKesimoMedio
+      id: testencontrarkesimomedio
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestEncontrarKesimoMedio
+        setup-command: ''
+        command: go test ./... -run ^TestEncontrarKesimoMedio$
+        timeout: 10
+        max-score: 1
+    - name: TestEncontrarKesimoPrimero
+      id: testencontrarkesimoprimero
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestEncontrarKesimoPrimero
+        setup-command: ''
+        command: go test ./... -run ^TestEncontrarKesimoPrimero$
+        timeout: 10
+        max-score: 1
+    - name: TestEncontrarKesimoUltimo
+      id: testencontrarkesimoultimo
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: TestEncontrarKesimoUltimo
+        setup-command: ''
+        command: go test ./... -run ^TestEncontrarKesimoUltimo$
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTENCONTRARENESIMOMAYOR_RESULTS: ${{steps.testencontrarenesimomayor.outputs.result}}
+        TESTRECURSIVEHEAPSORTARRAYVACIO_RESULTS: ${{steps.testrecursiveheapsortarrayvacio.outputs.result}}
+        TESTRECURSIVEHEAPSORTARRAYCONUNSOLOELEMENTO_RESULTS: ${{steps.testrecursiveheapsortarrayconunsoloelemento.outputs.result}}
+        TESTRECURSIVEHEAPSORTDOSELEMENTOSIGUALES_RESULTS: ${{steps.testrecursiveheapsortdoselementosiguales.outputs.result}}
+        TESTRECURSIVEHEAPSORTARRAYMENORAMAYOR_RESULTS: ${{steps.testrecursiveheapsortarraymenoramayor.outputs.result}}
+        TESTRECURSIVEHEAPSORTARRAYMAYORAMENOR_RESULTS: ${{steps.testrecursiveheapsortarraymayoramenor.outputs.result}}
+        TESTTHREEWAYMERGESORT_RESULTS: ${{steps.testthreewaymergesort.outputs.result}}
+        TESTTHREEWAYMERGESORTARRAYVACIO_RESULTS: ${{steps.testthreewaymergesortarrayvacio.outputs.result}}
+        TESTTHREEWAYMERGESORTARRAYUNELEMENTO_RESULTS: ${{steps.testthreewaymergesortarrayunelemento.outputs.result}}
+        TESTTHREEWAYMERGESORTCANTIDADPAR_RESULTS: ${{steps.testthreewaymergesortcantidadpar.outputs.result}}
+        TESTTHREEWAYMERGESORTCANTIDADIMPAR_RESULTS: ${{steps.testthreewaymergesortcantidadimpar.outputs.result}}
+        TESTQUICKSORTPIVOTEALEATORIOARRAYVACIOQ_RESULTS: ${{steps.testquicksortpivotealeatorioarrayvacioq.outputs.result}}
+        TESTQUICKSORTPIVOTEALEATORIOARRAYUNELEMENTOQ_RESULTS: ${{steps.testquicksortpivotealeatorioarrayunelementoq.outputs.result}}
+        TESTQUICKSORTPIVOTEALEATORIOCANTIDADPARQ_RESULTS: ${{steps.testquicksortpivotealeatoriocantidadparq.outputs.result}}
+        TESTQUICKSORTPIVOTEALEATORIOCANTIDADIMPARQ_RESULTS: ${{steps.testquicksortpivotealeatoriocantidadimparq.outputs.result}}
+        TESTENCONTRARKESIMOMEDIO_RESULTS: ${{steps.testencontrarkesimomedio.outputs.result}}
+        TESTENCONTRARKESIMOPRIMERO_RESULTS: ${{steps.testencontrarkesimoprimero.outputs.result}}
+        TESTENCONTRARKESIMOULTIMO_RESULTS: ${{steps.testencontrarkesimoultimo.outputs.result}}
+      with:
+        runners: testencontrarenesimomayor,testrecursiveheapsortarrayvacio,testrecursiveheapsortarrayconunsoloelemento,testrecursiveheapsortdoselementosiguales,testrecursiveheapsortarraymenoramayor,testrecursiveheapsortarraymayoramenor,testthreewaymergesort,testthreewaymergesortarrayvacio,testthreewaymergesortarrayunelemento,testthreewaymergesortcantidadpar,testthreewaymergesortcantidadimpar,testquicksortpivotealeatorioarrayvacioq,testquicksortpivotealeatorioarrayunelementoq,testquicksortpivotealeatoriocantidadparq,testquicksortpivotealeatoriocantidadimparq,testencontrarkesimomedio,testencontrarkesimoprimero,testencontrarkesimoultimo
