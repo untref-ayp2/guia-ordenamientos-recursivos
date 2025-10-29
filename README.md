@@ -5,10 +5,10 @@
 
 ### Ejercicio 1
 
-Comparar las siguientes versiones de HeapSort bajo la luz de la complejidad temporal y espacial:
+Comparar los siguientes dos algoritmos para ordenar un arreglo bajo la luz de la complejidad temporal y espacial:
 
-1. Aquella que interpreta un array como Heap, y verifica la propiedad de montículo.
-2. Aquella que toma cada elemento de un array y lo inserta en un montículo, para luego pasarlos nuevamente al array.
+1. Aquella que interpreta un array como Heap, y verifica la propiedad de montículo (Heapsort).
+2. Aquella que toma cada elemento de un array y lo inserta en un montículo, para luego pasarlos nuevamente al array. (No es Heapsort)
 
 ### Ejercicio 2
 
@@ -42,7 +42,7 @@ Implementar `quicksort` pero con el pivote elegido aleatoriamente. Comparar efic
 
 ### Ejercicio 2
 
-Dado un arreglo de números enteros, diseña un algoritmo que encuentre el "$k$-ésimo" elemento más pequeño del arreglo. Es decir, encuentra el elemento que ocuparía la posición $k$ si el arreglo estuviera ordenado de manera ascendente utilizando el algoritmo QuickSort.
+Dado un arreglo de números enteros, diseña un algoritmo que encuentre el "k-ésimo" elemento más pequeño del arreglo. Es decir, encuentra el elemento que ocuparía la posición $k$ si el arreglo estuviera ordenado de manera ascendente utilizando el algoritmo QuickSort.
 
 > Pasos para resolver el ejercicio:
 >
